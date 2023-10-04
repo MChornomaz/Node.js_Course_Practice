@@ -1,6 +1,6 @@
-const express = require('express')
-const ApiPaths = require('../../constants/API-paths')
-const healthCheckController = require('../../controllers/health-check/health-check.controller')
+import express from 'express'
+import { APIPaths } from '../../enums/API-paths.enum'
+import { getHealthCheckResponse } from '../../controllers/health-check/health-check.controller'
 
 const router = express.Router()
 
@@ -21,6 +21,6 @@ const router = express.Router()
  *                   type: string
  *                   example: "Server is running!"
  */
-router.get(ApiPaths.HEALTH_CHECK, healthCheckController)
+router.get(APIPaths.HEALTH_CHECK, getHealthCheckResponse)
 
-module.exports = router
+export { router as healthCheckRoute }

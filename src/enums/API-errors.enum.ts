@@ -4,4 +4,4 @@ const ApiErrors = {
     BAD_REQUEST: 'Bad Request'
 }
 
-module.exports = ApiErrors
+export { ApiErrors }

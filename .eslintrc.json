@@ -1,18 +1,14 @@
 {
     "env": {
         "browser": true,
-        "commonjs": true,
         "es2021": true
     },
-    "extends": "standard",
+    "extends": "standard-with-typescript",
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "no-new": "off"
+        "@typescript-eslint/indent": ["error", 4]
     }
 }

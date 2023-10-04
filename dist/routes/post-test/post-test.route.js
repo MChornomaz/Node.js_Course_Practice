@@ -1,8 +1,14 @@
-const express = require('express')
-const ApiPaths = require('../../constants/API-paths')
-const getPostTestResponse = require('../../controllers/post-test/post-test.controller')
-
-const router = express.Router()
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.postTestRoute = void 0;
+const express_1 = __importDefault(require("express"));
+const API_paths_enum_1 = require("../../enums/API-paths.enum");
+const post_test_controller_1 = require("../../controllers/post-test/post-test.controller");
+const router = express_1.default.Router();
+exports.postTestRoute = router;
 /**
  * @swagger
  * /api/post-test:
@@ -43,7 +49,4 @@ const router = express.Router()
  *                   type: string
  *                   description: Error message indicating missing 'text' field in the request.
  */
-
-router.post(ApiPaths.POST_TEST, getPostTestResponse)
-
-module.exports = router
+router.post(API_paths_enum_1.APIPaths.POST_TEST, post_test_controller_1.getPostTestResponse);

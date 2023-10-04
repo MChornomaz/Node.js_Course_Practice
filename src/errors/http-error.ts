@@ -1,9 +1,11 @@
 class HttpError extends Error {
-    constructor (message, errorCode) {
+    code: number
+
+    constructor (message: string, errorCode: number) {
         super()
         this.code = errorCode
         this.message = message
     }
 }
 
-module.exports = HttpError
+export { HttpError }
