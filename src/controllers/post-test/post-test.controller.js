@@ -1,4 +1,4 @@
-const HttpError = require('../../models/http-error')
+const HttpError = require('../../errors/http-error')
 const ApiErrors = require('../../constants/API-errors')
 
 // made just for test purpose as an optional task #6.
