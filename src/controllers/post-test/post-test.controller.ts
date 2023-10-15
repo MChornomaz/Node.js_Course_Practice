@@ -4,18 +4,17 @@ import { ApiErrors } from '../../enums/API-errors.enum'
 
 // made just for test purpose as an optional task #6.
 
-const getPostTestResponse = (req: Request, res: Response): Response<any, Record<string, any>> => {
+const getPostTestResponse = (req: Request, res: Response): void => {
     const requestText: string | undefined = req.body.text
 
     if (requestText === undefined || requestText === null) {
-        const error = new HttpError(
+        throw new HttpError(
             ApiErrors.BAD_REQUEST,
             400
         )
-        return res.json({ error })
     }
 
-    return res.status(200).json({ data: requestText })
+    res.status(200).json({ data: requestText })
 }
 
 export { getPostTestResponse }

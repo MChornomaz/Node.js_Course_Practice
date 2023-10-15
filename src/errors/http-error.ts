@@ -2,9 +2,9 @@ class HttpError extends Error {
     code: number
 
     constructor (message: string, errorCode: number) {
-        super()
+        super(message)
         this.code = errorCode
-        this.message = message
+        Object.setPrototypeOf(this, HttpError.prototype)
     }
 }
 
