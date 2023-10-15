@@ -1,6 +1,6 @@
-const express = require('express')
-const ApiPaths = require('../../constants/API-paths')
-const getPostTestResponse = require('../../controllers/post-test/post-test.controller')
+import express from 'express'
+import { APIPaths } from '../../enums/API-paths.enum'
+import { getPostTestResponse } from '../../controllers/post-test/post-test.controller'
 
 const router = express.Router()
 /**
@@ -44,6 +44,6 @@ const router = express.Router()
  *                   description: Error message indicating missing 'text' field in the request.
  */
 
-router.post(ApiPaths.POST_TEST, getPostTestResponse)
+router.post(APIPaths.POST_TEST, getPostTestResponse)
 
-module.exports = router
+export { router as postTestRoute }
