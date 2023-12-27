@@ -1,6 +1,8 @@
 enum APIPaths {
+    ROOT = '/',
     HEALTH_CHECK = '/health-check',
-    POST_TEST = '/post-test'
+    GENRE = '/genre',
+    GENRE_ID = '/genre/:id'
 }
 
 export { APIPaths }
