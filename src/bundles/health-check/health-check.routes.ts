@@ -1,6 +1,6 @@
 import express from 'express'
 import { APIPaths } from '../../enums/API-paths.enum'
-import { getHealthCheckResponse } from '../../controllers/health-check/health-check.controller'
+import { getHealthCheckController } from './health-check'
 
 const router = express.Router()
 
@@ -21,6 +21,6 @@ const router = express.Router()
  *                   type: string
  *                   example: "Server is running!"
  */
-router.get(APIPaths.HEALTH_CHECK, getHealthCheckResponse)
+router.get(APIPaths.HEALTH_CHECK, getHealthCheckController)
 
 export { router as healthCheckRoute }
