@@ -19,10 +19,10 @@ class GenreService implements Service {
     }
 
     public async findByID (payload: string): Promise<IGenre | null> {
-        const createdGenre = await this.genreRepository.findByID(payload)
+        const genre = await this.genreRepository.findByID(payload)
 
-        if (createdGenre !== null) {
-            return createdGenre
+        if (genre !== null) {
+            return genre
         }
         return null
     }

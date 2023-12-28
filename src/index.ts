@@ -5,7 +5,8 @@ import swaggerUi from 'swagger-ui-express'
 import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerOptions from '../swaggerOptions.json'
 
-import { genreRoute } from './bundles/genres/genre.routes'
+import { genreRoute } from './bundles/genres/genre'
+import { movieRoute } from './bundles/movies/movie'
 import { healthCheckRoute } from './bundles/health-check/health-check'
 import { errorHandler } from './middleware/error-handler/error-handler'
 import { validationResult } from 'express-validator'
@@ -21,6 +22,7 @@ app.use(bodyParser.json())
 // App
 app.use('/api', healthCheckRoute)
 app.use('/api', genreRoute)
+app.use('/api', movieRoute)
 
 // Error handling middleware
 

@@ -19,7 +19,6 @@ const createGenreController = async (req: Request, res: Response): Promise<void>
 
 const findGenreByIdController = async (req: Request, res: Response): Promise<void> => {
     const id = req.params.id
-    console.log(req.params.id)
     if (id !== undefined) {
         try {
             const genre = await genreService.findByID(id)
@@ -61,7 +60,6 @@ const updateGenreController = async (req: Request, res: Response): Promise<void>
 
 const deleteGenreController = async (req: Request, res: Response): Promise<void> => {
     const id = req.params.id
-    console.log(id)
     if (id !== undefined) {
         try {
             const genre = await genreService.delete(id)
